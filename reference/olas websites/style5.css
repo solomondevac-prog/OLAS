@@ -1,0 +1,147 @@
+body {
+    font-family: 'Verdana', sans-serif; 
+    margin: 0;
+    line-height: 1.65;
+    color: #333;
+    background-color: #f7f7f7; 
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+/* --- Hero Section Styling (Background Image) --- */
+.hero-section {
+   
+    background: url('https://via.placeholder.com/1920x600/5A8B82/FFFFFF?text=Community+Outreach+Image') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    background-color: rgba(52, 73, 94, 0.75); 
+    padding: 35px 50px;
+    border-radius: 8px;
+    max-width: 1000px;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+}
+
+/* --- Button Container & Base Styles --- */
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+
+.service-button {
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white; 
+    text-align: center;
+    transition: all 0.3s ease; 
+    cursor: pointer;
+    min-width: 200px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect for all buttons */
+.service-button:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+    opacity: 0.95;
+}
+
+/* Individual Button Colors (Friendly & Trustworthy Palette) */
+.primary {
+    background-color: #3498db; 
+}
+
+.secondary {
+    background-color: #2ecc71; 
+}
+
+.tertiary {
+    background-color: #f39c12; 
+}
+
+
+/* --- Content Sections Styling --- */
+.content-sections {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: 40px auto; 
+}
+
+.content-section {
+    margin-bottom: 50px; 
+    padding: 30px 40px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.content-section h2 {
+    font-size: 2em;
+    color: #2c3e50; 
+    margin-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.content-section h3 {
+    color: #2ecc71;
+    margin-top: 25px;
+}
+
+.content-section ul {
+    list-style: disc inside;
+    padding-left: 0;
+}
+
+/* Action Buttons */
+.link-button, .register-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+    text-transform: uppercase;
+}
+
+.link-button {
+    background-color: #2c3e50;
+    color: white;
+}
+.link-button:hover {
+    background-color: #1a242f;
+}
+
+.register-button {
+    background-color: #e74c3c; 
+    color: white;
+    font-size: 1.0em;
+}
+.register-button:hover {
+    background-color: #c0392b;
+}

@@ -1,0 +1,215 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+h1, h2, h3 {
+    color: #1a4d7d; 
+    margin-top: 0;
+}
+
+/* --- Hero Section & Background Image --- */
+.hero-section {
+    
+    background: url('2.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 20px 0 100px 0; 
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Navbar (Stays on Top) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: rgba(0, 0, 0, 0.6); 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.school-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%; 
+    border: 2px solid white;
+}
+
+.school-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffc107; 
+}
+
+/* --- Hero Content --- */
+.hero-content {
+    text-align: center;
+    padding: 100px 20px;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    color: white;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #eee;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #e74c3c; 
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 0 auto; 
+}
+
+.cta-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+/* --- Core Values Section (Vision & Mission) --- */
+.core-values-container {
+    display: flex;
+    max-width: 1000px;
+    margin: -50px auto 50px auto; 
+    padding: 0 20px;
+    gap: 30px;
+    z-index: 10;
+    position: relative;
+}
+
+.value-card {
+    flex: 1;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #ffc107; 
+}
+
+.value-card h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* --- Values Section --- */
+.values-section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.values-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    border-bottom: 3px solid #1a4d7d;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.values-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #3498db; 
+    transition: box-shadow 0.3s;
+}
+
+.values-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.values-item h3 {
+    color: #3498db;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a4d7d;
+    color: white;
+    margin-top: 50px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        margin-top: 10px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1.2em;
+    }
+    .core-values-container {
+        flex-direction: column; 
+        margin-top: 20px;
+    }
+    .objectives-grid {
+        grid-template-columns: 1fr; 
+    }
+}

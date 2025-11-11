@@ -1,0 +1,39 @@
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 160ms ease;
+}
+
+.ui-btn:focus {
+  outline: 3px solid rgba(58,120,195,0.14);
+  outline-offset: 3px;
+}
+
+.ui-btn-primary {
+  background: var(--primary);
+  color: var(--text-light);
+  box-shadow: 0 8px 30px rgba(58,120,195,0.12);
+}
+.ui-btn-primary:hover { transform: translateY(-3px); background: var(--primary-dark); }
+
+.ui-btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.ui-btn-secondary:hover { background: var(--primary); color: #fff; }
+
+.ui-btn-ghost {
+  background: transparent;
+  color: rgba(0,0,0,0.85);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.ui-btn-ghost:hover { background: rgba(0,0,0,0.04); }

@@ -1,0 +1,98 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+}
+
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+  /* add top padding to avoid sticky navbar overlap (navbar height 76px + spacing) */
+  padding-top: calc(76px + 1rem);
+  width: 100%;
+}
+
+/* Common styles for all pages */
+.page-container {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.section {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background: var(--section-bg);
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(16,24,40,0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 48px rgba(16,24,40,0.12);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.text-content {
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}

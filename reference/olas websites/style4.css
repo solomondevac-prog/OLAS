@@ -1,0 +1,153 @@
+body {
+    font-family: 'Georgia', serif; 
+    margin: 0;
+    line-height: 1.6;
+    color: #444;
+    background-color: #f0f4f7; 
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+/* --- Hero Section Styling (Background Image) --- */
+.hero-section {
+   
+    background: url('https://via.placeholder.com/1920x650/193A5B/EFEFEF?text=Graduate+Study+Library') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    background-color: rgba(25, 58, 91, 0.7); 
+    padding: 35px 50px;
+    border-radius: 10px;
+    max-width: 1000px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section h1 {
+    font-size: 3.2em;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 1.4em;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 25px; 
+}
+
+.grad-button {
+    text-decoration: none;
+    padding: 18px 30px;
+    border-radius: 6px;
+    font-size: 1.05em;
+    font-weight: bold;
+    color: white; 
+    text-align: center;
+    transition: all 0.3s ease; 
+    cursor: pointer;
+    min-width: 220px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+.grad-button:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+    opacity: 0.95;
+}
+
+
+.primary {
+    background-color: #0077b6; 
+    border: 1px solid #0077b6;
+}
+
+.secondary {
+    background-color: #ef8354; 
+    border: 1px solid #ef8354;
+}
+
+.tertiary {
+    background-color: #4c9a2a; 
+    border: 1px solid #4c9a2a;
+}
+
+
+
+.content-sections {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 40px auto; 
+}
+
+.content-section {
+    margin-bottom: 50px; 
+    padding: 30px 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #0077b6; 
+}
+
+.content-section h2 {
+    font-size: 2.2em;
+    color: #193A5B; 
+    margin-bottom: 20px;
+}
+
+.content-section h3 {
+    color: #ef8354;
+    margin-top: 25px;
+}
+
+.content-section ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.content-section li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+
+.link-button, .apply-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.link-button {
+    background-color: #193A5B;
+    color: white;
+}
+.link-button:hover {
+    background-color: #0f243b;
+}
+
+.apply-button {
+    background-color: #cc3333; 
+    color: white;
+    font-size: 1.1em;
+}
+.apply-button:hover {
+    background-color: #a32929;
+}

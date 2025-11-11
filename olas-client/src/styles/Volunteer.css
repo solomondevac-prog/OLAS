@@ -1,0 +1,282 @@
+.volunteer-hero {
+  position: relative;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  margin: -2rem -2rem 2rem -2rem;
+  overflow: hidden;
+}
+
+.volunteer-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(28,74,135,0.45), rgba(28,74,135,0.45));
+  z-index: 1;
+}
+
+.volunteer-hero .hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.volunteer-hero .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.volunteer-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease;
+}
+
+.volunteer-hero p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  animation: fadeIn 1s ease 0.2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Opportunities Section */
+.opportunities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.opportunity-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.opportunity-card:hover {
+  transform: translateY(-5px);
+}
+
+.opportunity-image.placeholder {
+  height: 200px;
+  background: #e0e0e0;
+}
+
+.opportunity-info {
+  padding: 1.5rem;
+}
+
+.opportunity-info h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.requirements {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.requirements li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.requirements li:last-child {
+  border-bottom: none;
+}
+
+/* Benefits Section */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.benefit-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.benefit-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.benefit-card ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.benefit-card ul li:last-child {
+  border-bottom: none;
+}
+
+/* Testimonials Section */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.testimonial-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-image.placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  margin: 0 auto 1.5rem;
+}
+
+.testimonial-card blockquote {
+  font-style: italic;
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.testimonial-author {
+  margin-top: 1rem;
+  text-align: right;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Application Section */
+.application-section {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 3rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.step-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* Buttons */
+.apply-btn, .start-btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.apply-btn:hover, .start-btn:hover {
+  background: var(--primary-dark);
+}
+
+.start-btn {
+  margin-top: 2rem;
+  max-width: 300px;
+}
+
+/* Section Headers */
+.volunteer-content > div {
+  margin-bottom: 4rem;
+}
+
+.volunteer-content h2 {
+  text-align: center;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .volunteer-hero {
+    height: 300px;
+  }
+
+  .volunteer-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .volunteer-hero p {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
+
+  .opportunities-grid,
+  .benefits-grid,
+  .testimonials-grid,
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .application-section {
+    padding: 2rem 1rem;
+  }
+}

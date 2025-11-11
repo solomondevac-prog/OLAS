@@ -1,0 +1,22 @@
+@import './styles/global.css';
+
+/* Tailwind base + components + utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Flowbite JS (interactive components) is imported from JS entry (main.jsx) */
