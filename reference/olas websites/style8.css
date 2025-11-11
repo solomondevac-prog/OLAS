@@ -137,6 +137,17 @@ h1, h2, h3 {
     padding-bottom: 10px;
 }
 
+.value-card p {
+    margin-top: 24px;
+    line-height: 1.7;
+}
+
+/* More specific rule to ensure spacing when a <p> immediately follows an <h2>
+   (helps against other global rules that might reset p margins) */
+.value-card h2 + p {
+    margin-top: 24px;
+}
+
 /* --- Values Section --- */
 .values-section {
     max-width: 1000px;
@@ -177,6 +188,37 @@ h1, h2, h3 {
     color: #3498db;
     font-size: 1.3em;
     margin-bottom: 10px;
+}
+
+/* Improve legibility: subtle text shadow on headings and copy */
+.values-item h3 {
+    text-shadow: 0 2px 6px rgba(0,0,0,0.20);
+}
+
+.values-item p {
+    color: #333;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.10);
+}
+
+/* Style action links / buttons inside value items to increase contrast */
+.values-item a,
+.values-item .btn {
+    display: inline-block;
+    background-color: #1a4d7d;
+    color: #ffffff;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(26,77,125,0.18);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease;
+}
+
+.values-item a:hover,
+.values-item .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(26,77,125,0.22);
+    background-color: #163a5a;
 }
 
 /* --- Footer --- */

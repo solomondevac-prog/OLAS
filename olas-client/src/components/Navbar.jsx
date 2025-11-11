@@ -42,16 +42,16 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white border-b border-gray-200 z-50">
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4 container">
+  <div className="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-3 container">
         <Link to="/" className="flex items-center space-x-3">
           <img src={logo} alt="Our Lady of the Angels Seminary logo" className="logo-img inline-block h-10 w-10 rounded-md object-cover" />
           <span className="self-center text-l font-semibold whitespace-nowrap text-dark">Our Lady of the Angels Seminary</span>
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center space-x-6">
-          <Link to="/" className="text-sm font-medium text-gray-700 hover:text-primary">Home</Link>
-          <Link to="/about" className="text-sm font-medium text-gray-700 hover:text-primary">About</Link>
+        <div className="hidden md:flex items-center space-x-6 py-1">
+          <Link to="/" className="text-sm font-medium text-gray-700 hover:text-primary px-2 py-1">Home</Link>
+          <Link to="/about" className="text-sm font-medium text-gray-700 hover:text-primary px-2 py-1">About</Link>
 
           {/* Academics dropdown (desktop) */}
           <div
@@ -65,7 +65,7 @@ const Navbar = () => {
               type="button"
               aria-expanded={open}
               aria-controls="academics-menu"
-              className="text-sm font-medium text-gray-700 hover:text-primary flex items-center space-x-2"
+              className="text-sm font-medium text-gray-700 hover:text-primary flex items-center space-x-2 px-2 py-1"
             >
               <span>Academics</span>
               <svg className="w-3 h-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -83,16 +83,14 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Link to="/graduate" className="text-sm font-medium text-gray-700 hover:text-primary">Graduate</Link>
-          <Link to="/outreach" className="text-sm font-medium text-gray-700 hover:text-primary">Outreach</Link>
-          <Link to="/research" className="text-sm font-medium text-gray-700 hover:text-primary">Research</Link>
-          <Link to="/volunteer" className="text-sm font-medium text-gray-700 hover:text-primary">Volunteer</Link>
+          <Link to="/graduate" className="text-sm font-medium text-gray-700 hover:text-primary px-2 py-1">Graduate</Link>
+          <Link to="/outreach" className="text-sm font-medium text-gray-700 hover:text-primary px-2 py-1">Outreach</Link>
+          <Link to="/research" className="text-sm font-medium text-gray-700 hover:text-primary px-2 py-1">Research</Link>
+          <Link to="/volunteer" className="text-sm font-medium text-gray-700 hover:text-primary px-2 py-1">Volunteer</Link>
         </div>
 
-        {/* Right side: support button + mobile hamburger */}
-        <div className="flex items-center space-x-3">
-          <Link to="/donate" className="px-4 py-2 rounded-full bg-primary text-white shadow hover:bg-primary-dark text-sm">Support</Link>
-
+        {/* Right side: mobile hamburger */}
+  <div className="flex items-center space-x-3">
           {/* Mobile hamburger button */}
           <button
             type="button"
@@ -114,14 +112,14 @@ const Navbar = () => {
       {/* Mobile menu panel */}
       <div className={`md:hidden bg-white border-b border-gray-200 transition-max-h duration-200 overflow-hidden ${mobileOpen ? 'max-h-screen' : 'max-h-0'}`}>
         <div className="px-4 pt-4 pb-6 space-y-2">
-          <Link to="/" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary">Home</Link>
-          <Link to="/about" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary">About</Link>
+          <Link to="/" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary py-2">Home</Link>
+          <Link to="/about" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary py-2">About</Link>
 
           {/* Academics (mobile collapsible) */}
           <div>
             <button
               type="button"
-              className="w-full flex items-center justify-between px-0 text-base font-medium text-gray-700 hover:text-primary"
+              className="w-full flex items-center justify-between px-0 text-base font-medium text-gray-700 hover:text-primary py-2"
               onClick={() => setMobileAcademicsOpen(v => !v)}
               aria-expanded={mobileAcademicsOpen}
             >
@@ -129,21 +127,19 @@ const Navbar = () => {
               <svg className={`w-4 h-4 ml-2 text-gray-600 transform transition-transform ${mobileAcademicsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
             <div className={`mt-2 pl-4 space-y-1 ${mobileAcademicsOpen ? 'block' : 'hidden'}`}>
-              <Link to="/academics/basic-education" onClick={closeMobile} className="block text-gray-700 hover:text-primary">Basic Education</Link>
-              <Link to="/academics/college" onClick={closeMobile} className="block text-gray-700 hover:text-primary">College</Link>
-              <Link to="/academics/graduate-school" onClick={closeMobile} className="block text-gray-700 hover:text-primary">Graduate School</Link>
-              <Link to="/academics/ictc-pastoral" onClick={closeMobile} className="block text-gray-700 hover:text-primary">ICTC - Pastoral Department</Link>
+              <Link to="/academics/basic-education" onClick={closeMobile} className="block text-gray-700 hover:text-primary py-1">Basic Education</Link>
+              <Link to="/academics/college" onClick={closeMobile} className="block text-gray-700 hover:text-primary py-1">College</Link>
+              <Link to="/academics/graduate-school" onClick={closeMobile} className="block text-gray-700 hover:text-primary py-1">Graduate School</Link>
+              <Link to="/academics/ictc-pastoral" onClick={closeMobile} className="block text-gray-700 hover:text-primary py-1">ICTC - Pastoral Department</Link>
             </div>
           </div>
 
-          <Link to="/graduate" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary">Graduate</Link>
-          <Link to="/outreach" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary">Outreach</Link>
-          <Link to="/research" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary">Research</Link>
-          <Link to="/volunteer" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary">Volunteer</Link>
+          <Link to="/graduate" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary py-2">Graduate</Link>
+          <Link to="/outreach" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary py-2">Outreach</Link>
+          <Link to="/research" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary py-2">Research</Link>
+          <Link to="/volunteer" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary py-2">Volunteer</Link>
 
-          <div className="pt-3">
-            <Link to="/donate" onClick={closeMobile} className="block px-4 py-2 rounded-full bg-primary text-white shadow hover:bg-primary-dark text-sm text-center">Support</Link>
-          </div>
+          {/* support link removed */}
         </div>
       </div>
     </nav>
