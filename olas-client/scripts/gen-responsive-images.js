@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-env node */
 // Simple responsive image generator using sharp
 // Usage: node scripts/gen-responsive-images.js
 

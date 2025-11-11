@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
 import '../styles/Home.css';
-
+const logo = new URL('../assets/images/hero-main2.png', import.meta.url).href;
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import Hero from '../components/Hero';
@@ -8,7 +7,7 @@ const Home = () => {
   return (
   <div className="page-container home space-y-12 md:space-y-20">
       <Hero
-        image="/images/hero-main2.png"
+        image={logo}
         imageAlt="Students and researchers collaborating at a laboratory"
         title="Excellence, Integrity, and Innovation"
         subtitle="A nurturing environment where futures are built and dreams take flight."
@@ -19,6 +18,13 @@ const Home = () => {
       <section className="features-section py-12 md:py-16 overflow-visible" aria-label="Quick links">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-8">
           <div className="features-grid grid gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 items-stretch">
+          <Card className="feature-card h-full flex flex-col justify-between" title="ICTC" footer={<Button to="/academics/ictc-pastoral" variant="secondary">Learn More</Button>}>
+            <div className="feature-icon" aria-hidden>
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            </div>
+            <p>Institute for Congregational Theological Center — Pastoral Formation and programs.</p>
+          </Card>
+
           <Card className="feature-card h-full flex flex-col justify-between" title="Research" footer={<Button to="/research" variant="secondary">Explore Research</Button>}>
             <div className="feature-icon" aria-hidden>
               <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M7 8l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -46,6 +52,7 @@ const Home = () => {
             </div>
             <p>Make a difference by joining our volunteer programs.</p>
           </Card>
+
           </div>
         </div>
       </section>
