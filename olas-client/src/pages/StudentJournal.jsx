@@ -265,7 +265,7 @@ const StudentJournal = () => {
               <iframe 
                 src={`${sanlakbayPDF}#toolbar=1&navpanes=0&scrollbar=1`}
                 className="w-full"
-                style={{ height: '1550px', minHeight: '600px' }}
+                style={{ height: 'auto', minHeight: '600px' }}
                 title="SANLAKBAY - Oscar Ante Lay Pastoral Formation"
               />
             </div>

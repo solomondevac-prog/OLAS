@@ -265,7 +265,7 @@ const ICTC = () => {
               <iframe 
                 src={`${hymPDF}#toolbar=1&navpanes=0&scrollbar=1`}
                 className="w-full"
-                style={{ height: '3300px', minHeight: '600px' }}
+                style={{ height: 'auto', minHeight: '600px' }}
                 title="ICTC Hymn - Tatak Pastoral"
               />
             </div>
