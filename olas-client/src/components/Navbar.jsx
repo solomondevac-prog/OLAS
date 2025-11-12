@@ -41,21 +41,24 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-b border-gray-200 z-50">
-  <div className="max-w-screen-xl flex items-center justify-between mx-auto px-4 py-3 container">
-        <Link to="/" className="flex items-center space-x-3">
-          <img src={logo} alt="Our Lady of the Angels Seminary logo" className="logo-img inline-block h-10 w-10 rounded-md object-cover" />
-          <span className="self-center text-l font-semibold whitespace-nowrap text-dark">Our Lady of the Angels Seminary</span>
+    <nav className="bg-white border-b border-gray-100 z-50 shadow-md sticky top-0 backdrop-blur-sm bg-white/95">
+  <div className="max-w-screen-xl flex items-center justify-between mx-auto px-6 py-4 container">
+        <Link to="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200">
+          <img src={logo} alt="Our Lady of the Angels Seminary logo" className="logo-img inline-block h-12 w-12 rounded-lg object-cover shadow-lg hover:shadow-xl transition-shadow" />
+          <div className="flex flex-col">
+            <span className="self-center text-sm font-bold whitespace-nowrap text-gray-900">Our Lady of the Angels</span>
+            <span className="text-xs text-gray-500 font-medium">Seminary-College</span>
+          </div>
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center space-x-6 py-1">
-          <Link to="/" className="text-sm font-medium text-gray-700 hover:text-primary px-2 py-1">Home</Link>
-          <Link to="/about" className="text-sm font-medium text-gray-700 hover:text-primary px-2 py-1">About</Link>
+        <div className="hidden md:flex items-center space-x-1 py-1">
+          <Link to="/" className="text-sm font-semibold text-gray-700 hover:text-primary hover:bg-primary/5 transition-all duration-200 px-3 py-2 rounded-md">Home</Link>
+          <Link to="/about" className="text-sm font-semibold text-gray-700 hover:text-primary hover:bg-primary/5 transition-all duration-200 px-3 py-2 rounded-md">About</Link>
 
           {/* Academics dropdown (desktop) */}
           <div
-            className="relative overflow-visible"
+            className="relative overflow-visible group"
             onMouseEnter={openMenu}
             onMouseLeave={scheduleClose}
             onFocus={openMenu}
@@ -65,7 +68,7 @@ const Navbar = () => {
               type="button"
               aria-expanded={open}
               aria-controls="academics-menu"
-              className="text-sm font-medium text-gray-700 hover:text-primary flex items-center space-x-2 px-2 py-1"
+              className="text-sm font-semibold text-gray-700 hover:text-primary hover:bg-primary/5 transition-all duration-200 flex items-center space-x-1 px-3 py-2 rounded-md"
             >
               <span>Academics</span>
               <svg className="w-3 h-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -74,27 +77,29 @@ const Navbar = () => {
             <div
               id="academics-menu"
               role="menu"
-              className={`absolute left-0 top-full mt-0 w-52 bg-white border border-gray-200 rounded-md shadow-lg transition-opacity z-50 ${open ? 'opacity-100 visible pointer-events-auto' : 'opacity-0 invisible pointer-events-none'}`}
+              className={`absolute left-0 top-full w-60 bg-white border border-gray-100 rounded-xl shadow-2xl transition-all duration-200 z-50 overflow-hidden pointer-events-auto ${open ? 'opacity-100 visible scale-100 mt-2' : 'opacity-0 invisible scale-95 mt-0'}`}
+              onMouseEnter={openMenu}
+              onMouseLeave={scheduleClose}
             >
-              <Link to="/academics/basic-education" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Basic Education</Link>
-              <Link to="/academics/college" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">College</Link>
-              <Link to="/academics/graduate-school" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Graduate School</Link>
-              <Link to="/academics/ictc-pastoral" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">ICTC - Pastoral Department</Link>
+              <div className="bg-gradient-to-r from-primary/5 to-primary/10 px-5 py-3 border-b border-gray-100">
+                <p className="text-xs font-bold text-gray-600 uppercase tracking-wider">Academic Programs</p>
+              </div>
+              <Link to="/academics/basic-education" className="block px-5 py-3 text-sm font-medium text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors border-b border-gray-50">Basic Education</Link>
+              <Link to="/academics/college" className="block px-5 py-3 text-sm font-medium text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors border-b border-gray-50">College</Link>
+              <Link to="/academics/graduate-school" className="block px-5 py-3 text-sm font-medium text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors border-b border-gray-50">Graduate School</Link>
+              <Link to="/academics/ictc-pastoral" className="block px-5 py-3 text-sm font-medium text-gray-700 hover:bg-primary/5 hover:text-primary transition-colors">ICTC - Pastoral Department</Link>
             </div>
           </div>
-
-          <Link to="/graduate" className="text-sm font-medium text-gray-700 hover:text-primary px-2 py-1">Graduate</Link>
-          <Link to="/outreach" className="text-sm font-medium text-gray-700 hover:text-primary px-2 py-1">Outreach</Link>
-          <Link to="/research" className="text-sm font-medium text-gray-700 hover:text-primary px-2 py-1">Research</Link>
-          <Link to="/volunteer" className="text-sm font-medium text-gray-700 hover:text-primary px-2 py-1">Volunteer</Link>
-        </div>
+          <Link to="/StudentJournal" className="text-sm font-semibold text-gray-700 hover:text-primary hover:bg-primary/5 transition-all duration-200 px-3 py-2 rounded-md">Student Journal</Link>
+          <Link to="/graduate" className="text-sm font-semibold text-gray-700 hover:text-primary hover:bg-primary/5 transition-all duration-200 px-3 py-2 rounded-md">Graduate</Link>
+          <Link to="/outreach" className="text-sm font-semibold text-gray-700 hover:text-primary hover:bg-primary/5 transition-all duration-200 px-3 py-2 rounded-md">Outreach</Link>        </div>
 
         {/* Right side: mobile hamburger */}
-  <div className="flex items-center space-x-3">
+  <div className="flex items-center space-x-4">
           {/* Mobile hamburger button */}
           <button
             type="button"
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-100"
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-700 hover:bg-primary/10 hover:text-primary transition-all"
             aria-label="Toggle menu"
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen(v => !v)}
@@ -110,35 +115,33 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu panel */}
-      <div className={`md:hidden bg-white border-b border-gray-200 transition-max-h duration-200 overflow-hidden ${mobileOpen ? 'max-h-screen' : 'max-h-0'}`}>
-        <div className="px-4 pt-4 pb-6 space-y-2">
-          <Link to="/" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary py-2">Home</Link>
-          <Link to="/about" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary py-2">About</Link>
+      <div className={`md:hidden bg-white border-b border-gray-100 transition-all duration-300 overflow-hidden ${mobileOpen ? 'max-h-screen' : 'max-h-0'}`}>
+        <div className="px-6 pt-4 pb-6 space-y-1 divide-y divide-gray-100">
+          <Link to="/" onClick={closeMobile} className="block text-base font-semibold text-gray-700 hover:text-primary hover:bg-primary/5 py-3 px-3 rounded-lg transition-all">Home</Link>
+          <Link to="/about" onClick={closeMobile} className="block text-base font-semibold text-gray-700 hover:text-primary hover:bg-primary/5 py-3 px-3 rounded-lg transition-all">About</Link>
 
           {/* Academics (mobile collapsible) */}
           <div>
             <button
               type="button"
-              className="w-full flex items-center justify-between px-0 text-base font-medium text-gray-700 hover:text-primary py-2"
+              className="w-full flex items-center justify-between px-3 text-base font-semibold text-gray-700 hover:text-primary hover:bg-primary/5 py-3 rounded-lg transition-all"
               onClick={() => setMobileAcademicsOpen(v => !v)}
               aria-expanded={mobileAcademicsOpen}
             >
               <span>Academics</span>
               <svg className={`w-4 h-4 ml-2 text-gray-600 transform transition-transform ${mobileAcademicsOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
-            <div className={`mt-2 pl-4 space-y-1 ${mobileAcademicsOpen ? 'block' : 'hidden'}`}>
-              <Link to="/academics/basic-education" onClick={closeMobile} className="block text-gray-700 hover:text-primary py-1">Basic Education</Link>
-              <Link to="/academics/college" onClick={closeMobile} className="block text-gray-700 hover:text-primary py-1">College</Link>
-              <Link to="/academics/graduate-school" onClick={closeMobile} className="block text-gray-700 hover:text-primary py-1">Graduate School</Link>
-              <Link to="/academics/ictc-pastoral" onClick={closeMobile} className="block text-gray-700 hover:text-primary py-1">ICTC - Pastoral Department</Link>
+            <div className={`mt-2 pl-8 pr-3 space-y-1 ${mobileAcademicsOpen ? 'block' : 'hidden'}`}>
+              <Link to="/academics/basic-education" onClick={closeMobile} className="block text-gray-700 hover:text-primary hover:bg-primary/5 py-2 px-3 rounded transition-all">Basic Education</Link>
+              <Link to="/academics/college" onClick={closeMobile} className="block text-gray-700 hover:text-primary hover:bg-primary/5 py-2 px-3 rounded transition-all">College</Link>
+              <Link to="/academics/graduate-school" onClick={closeMobile} className="block text-gray-700 hover:text-primary hover:bg-primary/5 py-2 px-3 rounded transition-all">Graduate School</Link>
+              <Link to="/academics/ictc-pastoral" onClick={closeMobile} className="block text-gray-700 hover:text-primary hover:bg-primary/5 py-2 px-3 rounded transition-all">ICTC - Pastoral Department</Link>
             </div>
           </div>
 
-          <Link to="/graduate" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary py-2">Graduate</Link>
-          <Link to="/outreach" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary py-2">Outreach</Link>
-          <Link to="/research" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary py-2">Research</Link>
-          <Link to="/volunteer" onClick={closeMobile} className="block text-base font-medium text-gray-700 hover:text-primary py-2">Volunteer</Link>
-
+          <Link to="/graduate" onClick={closeMobile} className="block text-base font-semibold text-gray-700 hover:text-primary hover:bg-primary/5 py-3 px-3 rounded-lg transition-all">Graduate</Link>
+          <Link to="/outreach" onClick={closeMobile} className="block text-base font-semibold text-gray-700 hover:text-primary hover:bg-primary/5 py-3 px-3 rounded-lg transition-all">Outreach</Link>
+          <Link to="/StudentJournal" onClick={closeMobile} className="block text-base font-semibold text-gray-700 hover:text-primary hover:bg-primary/5 py-3 px-3 rounded-lg transition-all">Student Journal</Link>
           {/* support link removed */}
         </div>
       </div>

@@ -26,7 +26,7 @@ const Hero = ({
     // Make the section the same height as the hero image and position the
     // image absolutely so the text can overlay it without creating a blank
     // block beneath the image.
-    <section className="relative bg-gray-50 overflow-hidden h-[48vh] sm:h-[60vh]" aria-labelledby="hero-title">
+    <section className="relative overflow-hidden h-[50vh] sm:h-[65vh] lg:h-[75vh]" aria-labelledby="hero-title">
       <img
         src={image}
         {...(srcSet ? { srcSet, sizes: '(max-width: 600px) 480px, (max-width: 1200px) 1024px, 1920px' } : {})}
@@ -36,17 +36,49 @@ const Hero = ({
         decoding="async"
       />
 
-  {/* Blue-tinted overlay + subtle dark gradient to increase contrast over busy photos */}
-  <div className="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/30 to-transparent pointer-events-none" />
-  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/40 pointer-events-none" />
+  {/* Balanced and professional overlays for text visibility */}
+  {/* Darker top overlay for heading area */}
+  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-transparent pointer-events-none" />
+  {/* Bottom gradient for visual depth */}
+  <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent pointer-events-none" />
+  {/* Center warm tint overlay with blue shade */}
+  <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-primary/10 to-transparent pointer-events-none" />
+  {/* Subtle blue overlay for entire image */}
+  <div className="absolute inset-0 bg-blue-500/15 mix-blend-multiply pointer-events-none" />
 
-      <div className="container mx-auto relative z-10 h-full flex items-center">
-        <div className="max-w-3xl text-center mx-auto text-white">
-          {title && <h1 id="hero-title" className="text-3xl sm:text-4xl lg:text-5xl font-bold drop-shadow-lg drop-shadow-[0_8px_20px_rgba(0,0,0,0.65)]">{title}</h1>}
-          {subtitle && <p className="mt-4 text-lg sm:text-xl text-white/90 drop-shadow-[0_6px_14px_rgba(0,0,0,0.55)]">{subtitle}</p>}
-          <div className="mt-6 flex justify-center gap-3">
-            {primary && <Button to={primary.to}>{primary.label}</Button>}
-            {secondary && <Button to={secondary.to} variant="ghost" className="text-white hover:bg-white/10">{secondary.label}</Button>}
+      <div className="container mx-auto relative z-10 h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl text-center mx-auto text-white w-full">
+          {title && (
+            <h1 
+              id="hero-title" 
+              className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight mb-6 sm:mb-8 tracking-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+            >
+              {title}
+            </h1>
+          )}
+          {subtitle && (
+            <p className="text-xl sm:text-2xl lg:text-3xl text-white/90 leading-relaxed font-medium mb-10 sm:mb-12 drop-shadow-[0_3px_8px_rgba(0,0,0,0.4)] max-w-3xl mx-auto">
+              {subtitle}
+            </p>
+          )}
+          <div className="mt-10 sm:mt-14 flex flex-col sm:flex-row justify-center items-center gap-5 sm:gap-6">
+            {primary && (
+              <Button 
+                to={primary.to} 
+                className="px-10 py-4 sm:px-12 sm:py-5 text-base sm:text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
+              >
+                {primary.label}
+              </Button>
+            )}
+            {secondary && (
+              <Button 
+                to={secondary.to} 
+                variant="ghost" 
+                className="px-10 py-4 sm:px-12 sm:py-5 text-base sm:text-lg font-bold !text-white border-2 border-white/80 hover:bg-white/20 hover:border-white/95 rounded-xl transition-all duration-300 backdrop-blur-md transform hover:-translate-y-1"
+              >
+                {secondary.label}
+              </Button>
+            )}
           </div>
         </div>
       </div>
